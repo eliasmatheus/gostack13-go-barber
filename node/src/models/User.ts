@@ -20,6 +20,9 @@ class User {
   @Column()
   password: string;
 
+  @Column()
+  avatar: string;
+
   /* eslint-disable camelcase */
   @CreateDateColumn()
   created_at: Date;
