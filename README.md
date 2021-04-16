@@ -4,10 +4,6 @@
 
 ## Sobre o projeto
 
-Este projeto foi desenvolvido como desafio para a vaga de desenvolvedor na [Agility](https://www.somosagility.com.br/). 
-
-O desafio objetivo da aplicação é consumir dois end-points que retornam objetos JSON com as informações de usuários. Essas informações devem ser re-ordenadas e retornados ao usuário em um HTML. O usuário deve também ser capaz de filtrar os resultados.
-
 ## Executando a aplicação
 
 ### Requisitos
@@ -26,21 +22,6 @@ O desafio objetivo da aplicação é consumir dois end-points que retornam objet
   $ cd gostack13-go-barber
 ```
 
-### Iniciar a imagem do PostgreSQL no Docker
-```bash
-  # Criar o container:
-  $ docker run --name gostack_postgres -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
-
-  # Listar todos os containers instalados, copiar o CONTAINER ID do postgress:
-  $ docker ps -a
-
-  # Rodar a imagem:
-  $ docker run {CONTAINER ID} 
-
-  # Para a imagem:
-  $ docker stop {CONTAINER ID} 
-```
-
 ### Iniciar back-end
 ```bash
   # Entrar no diretório do back-end:
@@ -49,12 +30,13 @@ O desafio objetivo da aplicação é consumir dois end-points que retornam objet
   # Instalar as dependências:
   $ yarn
 
-  # Rodar as migrations:
+  # Rodar as migrations*:
   $ yarn typeorm migration:run
 
-  # Rodar a aplicação:
+  # Rodar a aplicação*:
   $ yarn dev:server
 ```
+*A imagem do docker deve estar rodando.
 
 ### Rodar versão web
 ```bash
@@ -78,4 +60,22 @@ O desafio objetivo da aplicação é consumir dois end-points que retornam objet
 
   # Rodar a aplicação:
   $ yarn ios ou yarn android 
+```
+## Instruções para rodar a imagem do PostgreSQL
+### Criar a imagem no Docker
+```bash
+  # Criar o container:
+  $ docker run --name gostack_postgres -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
+```
+
+### Iniciar a imagem do PostgreSQL no Docker
+```bash
+  # Listar todos os containers instalados, copiar o CONTAINER ID do postgress:
+  $ docker ps -a
+
+  # Rodar a imagem:
+  $ docker run {CONTAINER ID} 
+
+  # Para a imagem:
+  $ docker stop {CONTAINER ID} 
 ```
