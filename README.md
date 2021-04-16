@@ -30,6 +30,8 @@
   # Instalar as dependências:
   $ yarn
 
+  # Crie um database dentro do docker com o nome: gostack_gobarber
+
   # Rodar as migrations*:
   $ yarn typeorm migration:run
 
@@ -66,6 +68,12 @@
 ```bash
   # Criar o container:
   $ docker run --name gostack_postgres -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
+
+  # Caso queira deixar os arquivos do banco de dados fora do container,
+  # basta adicionar o comando -v, seguido do caminho, no seguinte formato:
+  {caminho}/PostgreSQL:/var/lib/postgresql/data
+
+  $ docker run --name gostack_postgres -e POSTGRES_PASSWORD=docker -p 5432:5432 -v {caminho}/PostgreSQL:/var/lib/postgresql/data-d postgres 
 ```
 
 ### Iniciar a imagem do PostgreSQL no Docker
