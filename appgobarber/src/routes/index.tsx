@@ -11,6 +11,7 @@ const AuthRoutes: React.FC = () => (
     screenOptions={{
       headerShown: false,
     }}
+    initialRouteName="SignIn"
   >
     <Auth.Screen name="SignIn" component={SignIn} />
     <Auth.Screen name="SignUp" component={SignUp} />

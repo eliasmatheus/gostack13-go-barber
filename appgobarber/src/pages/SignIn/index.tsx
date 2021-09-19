@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useRef } from 'react';
 import {
   Image,
   View,
@@ -7,6 +7,9 @@ import {
   Platform,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
+import { useNavigation } from '@react-navigation/native';
+import { Form } from '@unform/mobile';
+import { FormHandles } from '@unform/core';
 
 import Button from '../../components/Button';
 import Input from '../../components/Input';
@@ -22,50 +25,65 @@ import {
   CreateAccountText,
 } from './styles';
 
-const SignIn: React.FC = () => (
-  <>
-    <KeyboardAvoidingView
-      style={{ flex: 1 }}
-      behavior={Platform.OS === 'ios' ? 'padding' : undefined}
-      enabled
-    >
-      <ScrollView
-        keyboardShouldPersistTaps="handled"
-        contentContainerStyle={{ flex: 1 }}
+const SignIn: React.FC = () => {
+  console.log('Hello');
+  const formRef = useRef<FormHandles>(null);
+  const navigation = useNavigation();
+
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  const handleSignIn = useCallback((data: object) => {
+    console.log('-> data', data);
+  }, []);
+
+  return (
+    <>
+      <KeyboardAvoidingView
+        style={{ flex: 1 }}
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+        enabled
       >
-        <Container>
-          <Image source={logoImg} />
+        <ScrollView
+          keyboardShouldPersistTaps="handled"
+          contentContainerStyle={{ flex: 1 }}
+        >
+          <Container>
+            <Image source={logoImg} />
 
-          <View>
-            <Title>Faça seu logon</Title>
-          </View>
+            <View>
+              <Title>Faça seu logon</Title>
+            </View>
 
-          <Input name="email" icon="mail" placeholder="E-mail" />
-          <Input name="password" icon="lock" placeholder="Senha" />
-          <Button
-            onPress={() => {
-              console.log('Click');
-            }}
-          >
-            Entrar
-          </Button>
+            <Form
+              ref={formRef}
+              onSubmit={handleSignIn}
+              style={{ width: '100%' }}
+            >
+              <Input name="email" icon="mail" placeholder="E-mail" />
 
-          <ForgotPassword
-            onPress={() => {
-              console.log('Click');
-            }}
-          >
-            <ForgotPasswordText>Esqueci minha senha</ForgotPasswordText>
-          </ForgotPassword>
-        </Container>
-      </ScrollView>
-    </KeyboardAvoidingView>
+              <Input name="password" icon="lock" placeholder="Senha" />
 
-    <CreateAccountButton>
-      <Icon name="log-in" size={20} color="#ff9000" />
-      <CreateAccountText>Criar uma conta</CreateAccountText>
-    </CreateAccountButton>
-  </>
-);
+              <Button
+                onPress={() => {
+                  console.log('Click');
+                  formRef.current?.submitForm();
+                }}
+              >
+                Entrar
+              </Button>
+            </Form>
+            <ForgotPassword onPress={() => formRef.current?.submitForm()}>
+              <ForgotPasswordText>Esqueci minha senha</ForgotPasswordText>
+            </ForgotPassword>
+          </Container>
+        </ScrollView>
+      </KeyboardAvoidingView>
+
+      <CreateAccountButton onPress={() => navigation.navigate('SignUp')}>
+        <Icon name="log-in" size={20} color="#ff9000" />
+        <CreateAccountText>Criar uma conta</CreateAccountText>
+      </CreateAccountButton>
+    </>
+  );
+};
 
 export default SignIn;
