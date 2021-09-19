@@ -26,7 +26,6 @@ import {
 } from './styles';
 
 const SignIn: React.FC = () => {
-  console.log('Hello');
   const formRef = useRef<FormHandles>(null);
   const navigation = useNavigation();
 
@@ -64,7 +63,6 @@ const SignIn: React.FC = () => {
 
               <Button
                 onPress={() => {
-                  console.log('Click');
                   formRef.current?.submitForm();
                 }}
               >
