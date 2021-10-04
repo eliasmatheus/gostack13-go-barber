@@ -61,6 +61,9 @@
   $ yarn
 
   # Rodar a aplicação:
+  $ yarn start
+ 
+  # Rodar o simulador:
   $ yarn ios ou yarn android 
 ```
 ## Instruções para rodar a imagem do PostgreSQL
