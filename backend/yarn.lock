@@ -698,6 +698,13 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.14.tgz#f7fd5f3cc8521301119f63910f0fb965c7d761ae"
   integrity sha512-UHnOPWVWV1z+VV8k6L1HhG7UbGBgIdghqF3l9Ny9ApPghbjICXkUJSd/b9gOgQfjM1r+37cipdw/HJ3F6ICEnQ==
 
+"@types/nodemailer@^6.4.6":
+  version "6.4.6"
+  resolved "https://registry.yarnpkg.com/@types/nodemailer/-/nodemailer-6.4.6.tgz#ce21b4b474a08f672f182e15982b7945dde1f288"
+  integrity sha512-pD6fL5GQtUKvD2WnPmg5bC2e8kWCAPDwMPmHe/ohQbW+Dy0EcHgZ2oCSuPlWNqk74LS5BVMig1SymQbFMPPK3w==
+  dependencies:
+    "@types/node" "*"
+
 "@types/prettier@^2.1.5":
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/@types/prettier/-/prettier-2.4.1.tgz#e1303048d5389563e130f5bdd89d37a99acb75eb"
@@ -3516,6 +3523,11 @@ node-releases@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-2.0.0.tgz#67dc74903100a7deb044037b8a2e5f453bb05400"
   integrity sha512-aA87l0flFYMzCHpTM3DERFSYxc6lv/BltdbRTOMZuxZ0cwZCD3mejE5n9vLhSJCN++/eOqr77G1IO5uXxlQYWA==
+
+nodemailer@^6.8.0:
+  version "6.8.0"
+  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-6.8.0.tgz#804bcc5256ee5523bc914506ee59f8de8f0b1cd5"
+  integrity sha512-EjYvSmHzekz6VNkNd12aUqAco+bOkRe3Of5jVhltqKhEsjw/y0PYPJfp83+s9Wzh1dspYAkUW/YNQ350NATbSQ==
 
 normalize-package-data@^2.3.2, normalize-package-data@^2.3.4:
   version "2.5.0"

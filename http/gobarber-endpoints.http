@@ -84,3 +84,28 @@ content-type: application/json
 accept: application/json
 Authorization: Bearer {{token}}
 #####################################
+
+#####################################
+# Forgot Password
+POST {{host}}/password/forgot
+content-type: application/json
+accept: application/json
+# Cookie: XDEBUG_SESSION=XDEBUG_ECLIPSE
+
+{
+	"email": "{{email}}"
+}
+#####################################
+
+#####################################
+# Reset Password
+POST {{host}}/password/reset
+content-type: application/json
+accept: application/json
+# Cookie: XDEBUG_SESSION=XDEBUG_ECLIPSE
+
+{
+	"password": "123123",
+	"token": "1d779c23-f886-4cb4-9f99-36ae0eaf3ffa"
+}
+#####################################
