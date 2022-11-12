@@ -1,0 +1,293 @@
+[
+  {
+    "_id": "1b0123cb-46b9-4e15-8423-ebfe0684be8f",
+    "colId": "c1357db2-b179-4062-923f-297d6e3dd53f",
+    "containerId": "2f2fd752-7d06-4811-9f95-4fc05012c718",
+    "name": "Login",
+    "url": "{{localhost}}/sessions",
+    "method": "POST",
+    "sortNum": 10000,
+    "created": "2022-11-12T22:03:26.710Z",
+    "modified": "2022-11-12T22:36:44.762Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "*/*",
+        "isDisabled": true
+      },
+      {
+        "name": "User-Agent",
+        "value": "Thunder Client (https://www.thunderclient.com)",
+        "isDisabled": true
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "name": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"email\": \"{{email}}\",\n  \"password\": \"{{password}}\"\n}",
+      "form": []
+    },
+    "tests": [
+      {
+        "type": "set-env-var",
+        "custom": "json.token",
+        "action": "setto",
+        "value": "{{token, local}}"
+      },
+      {
+        "type": "set-env-var",
+        "custom": "json.userWithoutPassword.id",
+        "action": "setto",
+        "value": "{{user_id, local}}"
+      }
+    ]
+  },
+  {
+    "_id": "ceff0990-ee9f-41e7-a494-30a6cd8c9137",
+    "colId": "c1357db2-b179-4062-923f-297d6e3dd53f",
+    "containerId": "2f2fd752-7d06-4811-9f95-4fc05012c718",
+    "name": "Create",
+    "url": "{{localhost}}/users",
+    "method": "POST",
+    "sortNum": 20000,
+    "created": "2022-11-12T22:07:41.363Z",
+    "modified": "2022-11-12T22:36:47.168Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "*/*",
+        "isDisabled": true
+      },
+      {
+        "name": "User-Agent",
+        "value": "Thunder Client (https://www.thunderclient.com)",
+        "isDisabled": true
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "name": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"{{name}}\",\n  \"email\": \"{{email}}\",\n  \"password\": \"{{password}}\"\n}",
+      "form": []
+    },
+    "tests": [
+      {
+        "type": "set-env-var",
+        "custom": "json.token",
+        "action": "setto",
+        "value": "{{token}}"
+      },
+      {
+        "type": "set-env-var",
+        "custom": "json.userWithoutPassword.id",
+        "action": "setto",
+        "value": "{{user_id}}"
+      }
+    ]
+  },
+  {
+    "_id": "66b77238-5f6f-4137-9069-570aed710aae",
+    "colId": "c1357db2-b179-4062-923f-297d6e3dd53f",
+    "containerId": "acc5b61b-c55c-436b-839e-1d3409b62a30",
+    "name": "Create Appointment",
+    "url": "{{localhost}}/appointments",
+    "method": "POST",
+    "sortNum": 10000,
+    "created": "2022-11-12T22:10:55.721Z",
+    "modified": "2022-11-12T22:37:41.129Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "*/*",
+        "isDisabled": true
+      },
+      {
+        "name": "User-Agent",
+        "value": "Thunder Client (https://www.thunderclient.com)",
+        "isDisabled": true
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "name": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"provider_id\": \"{{user_id}}\",\n  \"date\": \"{{#dateISO}}\"\n}",
+      "form": []
+    },
+    "auth": {
+      "type": "bearer",
+      "bearer": "{{token}}"
+    },
+    "tests": []
+  },
+  {
+    "_id": "6e8c541c-4324-4206-8a02-f4b9a2b09afb",
+    "colId": "c1357db2-b179-4062-923f-297d6e3dd53f",
+    "containerId": "acc5b61b-c55c-436b-839e-1d3409b62a30",
+    "name": "Get Appointments",
+    "url": "{{localhost}}/appointments",
+    "method": "GET",
+    "sortNum": 20000,
+    "created": "2022-11-12T22:15:35.396Z",
+    "modified": "2022-11-12T22:37:42.148Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "*/*",
+        "isDisabled": true
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "name": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "params": [],
+    "auth": {
+      "type": "bearer",
+      "bearer": "{{token}}"
+    },
+    "tests": []
+  },
+  {
+    "_id": "6c9f0567-2e97-43d5-99ba-89eee4b0a35b",
+    "colId": "c1357db2-b179-4062-923f-297d6e3dd53f",
+    "containerId": "6dbb8b54-9dc5-4a10-983b-922f41fee704",
+    "name": "User - Forgot Password",
+    "url": "{{localhost}}/password/forgot",
+    "method": "POST",
+    "sortNum": 10000,
+    "created": "2022-11-12T22:18:05.035Z",
+    "modified": "2022-11-12T22:37:29.070Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "*/*",
+        "isDisabled": true
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "name": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n\t\"email\": \"{{email}}\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "53529044-4698-443c-824a-fbad7459b7cf",
+    "colId": "c1357db2-b179-4062-923f-297d6e3dd53f",
+    "containerId": "6dbb8b54-9dc5-4a10-983b-922f41fee704",
+    "name": "Reset Password",
+    "url": "{{localhost}}/password/reset",
+    "method": "POST",
+    "sortNum": 20000,
+    "created": "2022-11-12T22:20:04.130Z",
+    "modified": "2022-11-12T22:37:29.988Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "*/*",
+        "isDisabled": true
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "name": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n\t\"password\": \"123123\",\n\t\"token\": \"e1f3a60b-d059-4c94-995d-4575dbbf762f\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "0086f6e1-7c69-49bb-abf8-ded6aa7b7179",
+    "colId": "c1357db2-b179-4062-923f-297d6e3dd53f",
+    "containerId": "2f2fd752-7d06-4811-9f95-4fc05012c718",
+    "name": "Upload Avatar",
+    "url": "{{localhost}}/users/avatar",
+    "method": "PATCH",
+    "sortNum": 30000,
+    "created": "2022-11-12T22:24:25.605Z",
+    "modified": "2022-11-12T22:36:48.230Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "*/*",
+        "isDisabled": true
+      },
+      {
+        "name": "User-Agent",
+        "value": "Thunder Client (https://www.thunderclient.com)",
+        "isDisabled": true
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "isDisabled": true
+      },
+      {
+        "name": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "params": [],
+    "body": {
+      "type": "formdata",
+      "raw": "",
+      "form": [],
+      "files": [
+        {
+          "name": "avatar",
+          "value": "../../../../../../../Desktop/avatar.png"
+        }
+      ]
+    },
+    "auth": {
+      "type": "bearer",
+      "bearer": "{{token}}"
+    },
+    "tests": []
+  }
+]

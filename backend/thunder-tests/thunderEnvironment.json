@@ -1,0 +1,27 @@
+[
+  {
+    "_id": "3a82c9b4-974b-4d90-b508-735e2a8da9e7",
+    "name": "Gostack",
+    "default": true,
+    "sortNum": 20000,
+    "created": "2022-11-12T21:57:59.611Z",
+    "modified": "2022-11-12T22:39:44.621Z",
+    "data": [
+      {
+        "name": "localhost",
+        "value": "http://localhost:3333"
+      }
+    ]
+  },
+  {
+    "_id": "c5d31b92-1ef7-4c03-9151-9820bb7ed294",
+    "name": "(Local Env)",
+    "default": false,
+    "global": true,
+    "local": true,
+    "sortNum": -1,
+    "created": "2022-11-12T22:38:45.831Z",
+    "modified": "2022-11-12T22:38:45.831Z",
+    "data": []
+  }
+]

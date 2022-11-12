@@ -1,0 +1,130 @@
+[
+  {
+    "_id": "8b2fe3e8-224f-457b-814d-c28a5155cf70",
+    "colId": "history",
+    "containerId": "",
+    "name": "https://www.thunderclient.com/welcome",
+    "url": "https://www.thunderclient.com/welcome",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-11-12T21:54:07.887Z",
+    "modified": "2022-11-12T21:54:09.289Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "082850ae-8a9d-4714-bc2f-c4188793a328",
+    "colId": "history",
+    "containerId": "",
+    "name": "{{localhost}}/sessions",
+    "url": "{{localhost}}/sessions",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-11-12T22:00:39.368Z",
+    "modified": "2022-11-12T22:01:36.945Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "*/*",
+        "isDisabled": true
+      },
+      {
+        "name": "User-Agent",
+        "value": "Thunder Client (https://www.thunderclient.com)",
+        "isDisabled": true
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "name": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"email\": \"{{email}}\",\n  \"password\": \"{{password}}\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "55012ebe-0f76-49c9-84a8-04c6c12141f8",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3333/sessions",
+    "url": "http://localhost:3333/sessions",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-11-12T22:02:06.922Z",
+    "modified": "2022-11-12T22:02:06.931Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "*/*",
+        "isDisabled": true
+      },
+      {
+        "name": "User-Agent",
+        "value": "Thunder Client (https://www.thunderclient.com)",
+        "isDisabled": true
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "name": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"email\": \"{{email}}\",\n  \"password\": \"{{password}}\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "78572e96-b5c1-4aaa-9c10-8846b6c9ab37",
+    "colId": "history",
+    "containerId": "",
+    "name": "{{localhost}}/sessions",
+    "url": "{{localhost}}/sessions",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-11-12T22:02:34.236Z",
+    "modified": "2022-11-12T22:02:34.355Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "*/*",
+        "isDisabled": true
+      },
+      {
+        "name": "User-Agent",
+        "value": "Thunder Client (https://www.thunderclient.com)",
+        "isDisabled": true
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "name": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"email\": \"{{email}}\",\n  \"password\": \"{{password}}\"\n}",
+      "form": []
+    },
+    "tests": []
+  }
+]

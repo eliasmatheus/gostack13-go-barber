@@ -1,0 +1,31 @@
+[
+  {
+    "_id": "c1357db2-b179-4062-923f-297d6e3dd53f",
+    "colName": "Dev",
+    "created": "2022-11-12T22:03:26.709Z",
+    "sortNum": 10000,
+    "folders": [
+      {
+        "_id": "2f2fd752-7d06-4811-9f95-4fc05012c718",
+        "name": "user",
+        "containerId": "",
+        "created": "2022-11-12T22:36:42.103Z",
+        "sortNum": 10000
+      },
+      {
+        "_id": "6dbb8b54-9dc5-4a10-983b-922f41fee704",
+        "name": "password",
+        "containerId": "",
+        "created": "2022-11-12T22:37:11.050Z",
+        "sortNum": 20000
+      },
+      {
+        "_id": "acc5b61b-c55c-436b-839e-1d3409b62a30",
+        "name": "appointments",
+        "containerId": "",
+        "created": "2022-11-12T22:37:38.232Z",
+        "sortNum": 30000
+      }
+    ]
+  }
+]
