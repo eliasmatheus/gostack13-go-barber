@@ -1,6 +1,5 @@
 .idea/
 node_modules/
-.vscode/
 build/
 
 tmp/*
