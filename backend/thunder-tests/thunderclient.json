@@ -3,7 +3,7 @@
     "_id": "1b0123cb-46b9-4e15-8423-ebfe0684be8f",
     "colId": "c1357db2-b179-4062-923f-297d6e3dd53f",
     "containerId": "2f2fd752-7d06-4811-9f95-4fc05012c718",
-    "name": "Login",
+    "name": "Authenticate",
     "url": "{{localhost}}/sessions",
     "method": "POST",
     "sortNum": 10000,
@@ -283,6 +283,75 @@
           "value": "../../../../../../../Desktop/avatar.png"
         }
       ]
+    },
+    "auth": {
+      "type": "bearer",
+      "bearer": "{{token}}"
+    },
+    "tests": []
+  },
+  {
+    "_id": "7f1c5d68-6e68-403b-be5d-6e74e564f293",
+    "colId": "c1357db2-b179-4062-923f-297d6e3dd53f",
+    "containerId": "2f2fd752-7d06-4811-9f95-4fc05012c718",
+    "name": "Show Profile",
+    "url": "{{localhost}}/profile",
+    "method": "GET",
+    "sortNum": 40000,
+    "created": "2022-11-14T01:06:14.642Z",
+    "modified": "2022-11-14T01:06:52.625Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "*/*",
+        "isDisabled": true
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "name": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "params": [],
+    "auth": {
+      "type": "bearer",
+      "bearer": "{{token}}"
+    },
+    "tests": []
+  },
+  {
+    "_id": "12e8051a-0029-4dcd-8e9e-2d9f36f1e2be",
+    "colId": "c1357db2-b179-4062-923f-297d6e3dd53f",
+    "containerId": "2f2fd752-7d06-4811-9f95-4fc05012c718",
+    "name": "Update Profile",
+    "url": "{{localhost}}/profile",
+    "method": "PUT",
+    "sortNum": 50000,
+    "created": "2022-11-14T01:08:10.790Z",
+    "modified": "2022-11-14T01:14:47.681Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "*/*",
+        "isDisabled": true
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "name": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"id\": \"{{user_id}}\",\n  \"name\": \"Jhon Doe\",\n  \"email\": \"johndoe@test.com\",\n  \"old_password\": \"{{password}}\",\n  \"password\": \"123456\"\n}",
+      "form": []
     },
     "auth": {
       "type": "bearer",
