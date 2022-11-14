@@ -3,22 +3,22 @@ import AppError from '@shared/errors/AppError';
 import FakeUsersRepository from '../repositories/fakes/FakeUsersRepository';
 import UpdateUserAvatarService from './UpdateUserAvatarService';
 
-let fakeUsersSRepository: FakeUsersRepository;
+let fakeUsersRepository: FakeUsersRepository;
 let fakeStorageProvider: FakeStorageProvider;
 
 describe('UpdateUserAvatar', () => {
   beforeEach(() => {
-    fakeUsersSRepository = new FakeUsersRepository();
+    fakeUsersRepository = new FakeUsersRepository();
     fakeStorageProvider = new FakeStorageProvider();
   });
 
   it('should be able to upload avatar', async () => {
     const updateUserAvatar = new UpdateUserAvatarService(
-      fakeUsersSRepository,
+      fakeUsersRepository,
       fakeStorageProvider,
     );
 
-    const user = await fakeUsersSRepository.create({
+    const user = await fakeUsersRepository.create({
       name: 'John Doe',
       email: 'johndoe@exemple.com',
       password: '123456',
@@ -34,7 +34,7 @@ describe('UpdateUserAvatar', () => {
 
   it('should not be able to upload avatar from non existing user', async () => {
     const updateUserAvatar = new UpdateUserAvatarService(
-      fakeUsersSRepository,
+      fakeUsersRepository,
       fakeStorageProvider,
     );
 
@@ -50,11 +50,11 @@ describe('UpdateUserAvatar', () => {
     const deleteFile = jest.spyOn(fakeStorageProvider, 'deleteFile');
 
     const updateUserAvatar = new UpdateUserAvatarService(
-      fakeUsersSRepository,
+      fakeUsersRepository,
       fakeStorageProvider,
     );
 
-    const user = await fakeUsersSRepository.create({
+    const user = await fakeUsersRepository.create({
       name: 'John Doe',
       email: 'johndoe@exemple.com',
       password: '123456',
