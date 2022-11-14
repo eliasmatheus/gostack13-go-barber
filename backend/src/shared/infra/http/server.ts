@@ -15,7 +15,7 @@ import '@shared/container';
 const app = express();
 
 // app.use((req, res, next) => {
-//   console.log('app.use -> req', req.body);
+//   console.log('app.use -> req', req);
 //   next();
 // });
 

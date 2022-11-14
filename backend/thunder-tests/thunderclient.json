@@ -358,5 +358,37 @@
       "bearer": "{{token}}"
     },
     "tests": []
+  },
+  {
+    "_id": "48ca1d82-c05f-4a52-a76c-301360ae153d",
+    "colId": "c1357db2-b179-4062-923f-297d6e3dd53f",
+    "containerId": "acc5b61b-c55c-436b-839e-1d3409b62a30",
+    "name": "Providers",
+    "url": "{{localhost}}/providers",
+    "method": "GET",
+    "sortNum": 30000,
+    "created": "2022-11-14T22:22:45.029Z",
+    "modified": "2022-11-14T22:23:04.289Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "*/*",
+        "isDisabled": true
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "name": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "params": [],
+    "auth": {
+      "type": "bearer",
+      "bearer": "{{token}}"
+    },
+    "tests": []
   }
 ]
