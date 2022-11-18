@@ -1,4 +1,4 @@
-import { getDaysInMonth, getDate } from 'date-fns';
+import { getHours } from 'date-fns';
 import { inject, injectable } from 'tsyringe';
 import IAppointmentsRepository from '../repositories/IAppointmentsRepository';
 
@@ -12,15 +12,16 @@ interface IRequest {
   provider_id: string;
   month: number;
   year: number;
+  day: number;
 }
 
 type IResponse = Array<{
-  day: number;
+  hour: number;
   available: boolean;
 }>;
 
 @injectable()
-class ListProviderMonthAvailabilityService {
+class ListProviderDayAvailabilityService {
   constructor(
     @inject('AppointmentRepository')
     private appointmentsRepository: IAppointmentsRepository,
@@ -28,30 +29,39 @@ class ListProviderMonthAvailabilityService {
 
   public async execute({
     provider_id,
+    day,
     month,
     year,
   }: IRequest): Promise<IResponse> {
-    const appointments = await this.appointmentsRepository.findAllInMonthFromProvider(
-      { provider_id, month, year },
+    const appointments = await this.appointmentsRepository.findAllInDayFromProvider(
+      {
+        provider_id,
+        day,
+        month,
+        year,
+      },
     );
 
-    const numberOfDaysInMonth = getDaysInMonth(new Date(year, month - 1));
+    const hourStart = 8;
 
-    const eachDayArray = Array.from(
-      { length: numberOfDaysInMonth },
-      (_, index) => index + 1,
+    const eachHourArray = Array.from(
+      { length: 10 },
+      (_, index) => index + hourStart,
     );
 
-    const availability = eachDayArray.map(day => {
-      const appointmentsInDay = appointments.filter(appointment => {
-        return getDate(appointment.date) === day;
-      });
+    const availability = eachHourArray.map(hour => {
+      const hasAppointmentInHour = appointments.find(
+        appointment => getHours(appointment.date) === hour,
+      );
 
-      return { day, available: appointmentsInDay.length < 10 };
+      return {
+        hour,
+        available: !hasAppointmentInHour,
+      };
     });
 
     return availability;
   }
 }
 
-export default ListProviderMonthAvailabilityService;
+export default ListProviderDayAvailabilityService;
