@@ -1,6 +1,6 @@
 .idea/
+coverage/
 node_modules/
-.vscode/
 build/
 
 tmp/*
