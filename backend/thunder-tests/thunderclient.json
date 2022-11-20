@@ -8,7 +8,7 @@
     "method": "POST",
     "sortNum": 30000,
     "created": "2022-11-12T22:03:26.710Z",
-    "modified": "2022-11-20T19:42:59.661Z",
+    "modified": "2022-11-20T20:59:12.591Z",
     "headers": [
       {
         "name": "Accept",
@@ -32,7 +32,7 @@
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"email\": \"{{email_provider}}\",\n  \"password\": \"{{password_provider}}\"\n}",
+      "raw": "{\n  \"email\": \"{{email}}\",\n  \"password\": \"{{password}}\"\n}",
       "form": []
     },
     "tests": [
@@ -110,7 +110,7 @@
     "method": "POST",
     "sortNum": 10000,
     "created": "2022-11-12T22:10:55.721Z",
-    "modified": "2022-11-20T19:41:42.452Z",
+    "modified": "2022-11-20T21:02:46.837Z",
     "headers": [
       {
         "name": "Accept",
@@ -134,7 +134,7 @@
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"provider_id\": \"{{provider_id}}\",\n  \"user_id\": \"{{user_id}}\",\n  \"date\": \"{{#dateISO, { day: 1, hour: 19 }}}\"\n}",
+      "raw": "{\n  \"provider_id\": \"{{provider_id}}\",\n  \"user_id\": \"{{user_id}}\",\n  \"date\": \"2022-11-22 15:00:00\"\n}",
       "form": []
     },
     "auth": {
