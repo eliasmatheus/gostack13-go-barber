@@ -59,7 +59,7 @@
     "method": "POST",
     "sortNum": 20000,
     "created": "2022-11-12T22:07:41.363Z",
-    "modified": "2022-11-12T22:36:47.168Z",
+    "modified": "2022-11-19T23:12:57.587Z",
     "headers": [
       {
         "name": "Accept",
@@ -83,7 +83,7 @@
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"name\": \"{{name}}\",\n  \"email\": \"{{email}}\",\n  \"password\": \"{{password}}\"\n}",
+      "raw": "{\n  \"name\": \"Elias Prestador\",\n  \"email\": \"elias.prestador@teste.com\",\n  \"password\": \"123456\"\n}",
       "form": []
     },
     "tests": [
@@ -110,7 +110,7 @@
     "method": "POST",
     "sortNum": 10000,
     "created": "2022-11-12T22:10:55.721Z",
-    "modified": "2022-11-12T22:37:41.129Z",
+    "modified": "2022-11-19T23:19:22.007Z",
     "headers": [
       {
         "name": "Accept",
@@ -134,7 +134,7 @@
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"provider_id\": \"{{user_id}}\",\n  \"date\": \"{{#dateISO}}\"\n}",
+      "raw": "{\n  \"provider_id\": \"{{provider_id}}\",\n  \"user_id\": \"{{user_id}}\",\n  \"date\": \"{{#dateISO, { day: 1, hour: 12 }}}\"\n}",
       "form": []
     },
     "auth": {
@@ -362,13 +362,13 @@
   {
     "_id": "48ca1d82-c05f-4a52-a76c-301360ae153d",
     "colId": "c1357db2-b179-4062-923f-297d6e3dd53f",
-    "containerId": "acc5b61b-c55c-436b-839e-1d3409b62a30",
+    "containerId": "6b40aa9a-ab6d-4e05-a1bd-49b2ed1d88e5",
     "name": "Providers",
     "url": "{{localhost}}/providers",
     "method": "GET",
-    "sortNum": 30000,
+    "sortNum": 10000,
     "created": "2022-11-14T22:22:45.029Z",
-    "modified": "2022-11-14T22:23:04.289Z",
+    "modified": "2022-11-19T23:10:59.039Z",
     "headers": [
       {
         "name": "Accept",
@@ -394,13 +394,13 @@
   {
     "_id": "a7fd7b41-b9c0-417a-ab19-141a5015d984",
     "colId": "c1357db2-b179-4062-923f-297d6e3dd53f",
-    "containerId": "acc5b61b-c55c-436b-839e-1d3409b62a30",
-    "name": "Availability",
-    "url": "{{localhost}}/appointments/month-availability/{{user_id}}",
+    "containerId": "6b40aa9a-ab6d-4e05-a1bd-49b2ed1d88e5",
+    "name": "Month Availability",
+    "url": "{{localhost}}/providers/{{provider_id}}/month-availability/",
     "method": "GET",
-    "sortNum": 40000,
+    "sortNum": 20000,
     "created": "2022-11-18T20:06:31.608Z",
-    "modified": "2022-11-18T20:07:23.037Z",
+    "modified": "2022-11-19T23:21:38.630Z",
     "headers": [
       {
         "name": "Accept",
@@ -417,6 +417,48 @@
       }
     ],
     "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"month\": 12,\n  \"year\": 2022\n}",
+      "form": []
+    },
+    "auth": {
+      "type": "bearer",
+      "bearer": "{{token}}"
+    },
+    "tests": []
+  },
+  {
+    "_id": "26520f99-028e-4c48-be59-5460aee074f2",
+    "colId": "c1357db2-b179-4062-923f-297d6e3dd53f",
+    "containerId": "6b40aa9a-ab6d-4e05-a1bd-49b2ed1d88e5",
+    "name": "Day Availability",
+    "url": "{{localhost}}/providers/{{provider_id}}/day-availability/",
+    "method": "GET",
+    "sortNum": 30000,
+    "created": "2022-11-19T23:22:08.406Z",
+    "modified": "2022-11-20T00:42:06.551Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "*/*",
+        "isDisabled": true
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "name": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"month\": 11,\n  \"day\": 21,\n  \"year\": 2022\n}",
+      "form": []
+    },
     "auth": {
       "type": "bearer",
       "bearer": "{{token}}"
