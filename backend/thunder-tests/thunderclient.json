@@ -8,7 +8,7 @@
     "method": "POST",
     "sortNum": 30000,
     "created": "2022-11-12T22:03:26.710Z",
-    "modified": "2022-11-18T20:07:48.706Z",
+    "modified": "2022-11-20T19:42:59.661Z",
     "headers": [
       {
         "name": "Accept",
@@ -32,7 +32,7 @@
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"email\": \"{{email}}\",\n  \"password\": \"{{password}}\"\n}",
+      "raw": "{\n  \"email\": \"{{email_provider}}\",\n  \"password\": \"{{password_provider}}\"\n}",
       "form": []
     },
     "tests": [
@@ -110,7 +110,7 @@
     "method": "POST",
     "sortNum": 10000,
     "created": "2022-11-12T22:10:55.721Z",
-    "modified": "2022-11-19T23:19:22.007Z",
+    "modified": "2022-11-20T19:41:42.452Z",
     "headers": [
       {
         "name": "Accept",
@@ -134,7 +134,7 @@
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"provider_id\": \"{{provider_id}}\",\n  \"user_id\": \"{{user_id}}\",\n  \"date\": \"{{#dateISO, { day: 1, hour: 12 }}}\"\n}",
+      "raw": "{\n  \"provider_id\": \"{{provider_id}}\",\n  \"user_id\": \"{{user_id}}\",\n  \"date\": \"{{#dateISO, { day: 1, hour: 19 }}}\"\n}",
       "form": []
     },
     "auth": {
@@ -457,6 +457,43 @@
     "body": {
       "type": "json",
       "raw": "{\n  \"month\": 11,\n  \"day\": 21,\n  \"year\": 2022\n}",
+      "form": []
+    },
+    "auth": {
+      "type": "bearer",
+      "bearer": "{{token}}"
+    },
+    "tests": []
+  },
+  {
+    "_id": "07509807-2948-4faf-ba16-ef6a057cfa00",
+    "colId": "c1357db2-b179-4062-923f-297d6e3dd53f",
+    "containerId": "6b40aa9a-ab6d-4e05-a1bd-49b2ed1d88e5",
+    "name": "Provider Appointments",
+    "url": "{{localhost}}/appointments/me",
+    "method": "GET",
+    "sortNum": 25000,
+    "created": "2022-11-20T19:33:31.303Z",
+    "modified": "2022-11-20T19:51:39.961Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "*/*",
+        "isDisabled": true
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "name": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"month\": 11,\n  \"day\": 22,\n  \"year\": 2022\n}",
       "form": []
     },
     "auth": {

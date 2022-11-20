@@ -12,6 +12,20 @@ export default class ProvidersController {
       user_id,
     });
 
-    return response.json(providers);
+    const providersWithoutPassword = providers.map(provider => {
+      // Com a atualização do TypeScript, isso se faz necessário
+      const withoutPassword = {
+        id: provider.id,
+        name: provider.name,
+        email: provider.email,
+        avatar: provider.avatar,
+        created_at: provider.created_at,
+        updated_at: provider.updated_at,
+      };
+
+      return withoutPassword;
+    });
+
+    return response.json(providersWithoutPassword);
   }
 }
