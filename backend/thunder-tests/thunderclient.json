@@ -8,7 +8,7 @@
     "method": "POST",
     "sortNum": 30000,
     "created": "2022-11-12T22:03:26.710Z",
-    "modified": "2022-11-20T20:59:12.591Z",
+    "modified": "2022-11-22T13:42:48.048Z",
     "headers": [
       {
         "name": "Accept",
@@ -44,7 +44,7 @@
       },
       {
         "type": "set-env-var",
-        "custom": "json.userWithoutPassword.id",
+        "custom": "json.user.id",
         "action": "setto",
         "value": "{{user_id, local}}"
       }
@@ -59,7 +59,7 @@
     "method": "POST",
     "sortNum": 20000,
     "created": "2022-11-12T22:07:41.363Z",
-    "modified": "2022-11-19T23:12:57.587Z",
+    "modified": "2022-11-22T13:41:16.778Z",
     "headers": [
       {
         "name": "Accept",
@@ -83,7 +83,7 @@
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"name\": \"Elias Prestador\",\n  \"email\": \"elias.prestador@teste.com\",\n  \"password\": \"123456\"\n}",
+      "raw": "{\n  \"name\": \"Name\",\n  \"email\": \"email@teste.com\",\n  \"password\": \"123456\"\n}",
       "form": []
     },
     "tests": [
@@ -91,13 +91,13 @@
         "type": "set-env-var",
         "custom": "json.token",
         "action": "setto",
-        "value": "{{token}}"
+        "value": "{{token, local}}"
       },
       {
         "type": "set-env-var",
-        "custom": "json.userWithoutPassword.id",
+        "custom": "json.user.id",
         "action": "setto",
-        "value": "{{user_id}}"
+        "value": "{{user_id, local}}"
       }
     ]
   },
