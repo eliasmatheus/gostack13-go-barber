@@ -37,6 +37,8 @@
   # Rodar as migrations*:
   $ yarn typeorm migration:run
 
+  # Configurar o arquivo de variáveis ambiente '.env' de acordo com o arquivo '.env.exemple'
+
   # Rodar a aplicação*:
   $ yarn dev:server
 ```
