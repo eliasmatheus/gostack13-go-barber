@@ -8,7 +8,7 @@
     "method": "POST",
     "sortNum": 30000,
     "created": "2022-11-12T22:03:26.710Z",
-    "modified": "2022-11-22T13:42:48.048Z",
+    "modified": "2022-11-27T20:43:54.108Z",
     "headers": [
       {
         "name": "Accept",
@@ -32,7 +32,7 @@
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"email\": \"{{email}}\",\n  \"password\": \"{{password}}\"\n}",
+      "raw": "{\n  \"email\": \"{{email_provider}}\",\n  \"password\": \"{{password_provider}}\"\n}",
       "form": []
     },
     "tests": [
@@ -59,7 +59,7 @@
     "method": "POST",
     "sortNum": 20000,
     "created": "2022-11-12T22:07:41.363Z",
-    "modified": "2022-11-22T14:57:02.916Z",
+    "modified": "2022-11-28T00:11:48.047Z",
     "headers": [
       {
         "name": "Accept",
@@ -83,7 +83,7 @@
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"name\": \"{{name}}\",\n  \"email\": \"{{email}}\",\n  \"password\": \"{{password}}\"\n}",
+      "raw": "{\n  \"name\": \"Teste Redis\",\n  \"email\": \"teste@teste.com.br\",\n  \"password\": \"123456\"\n}",
       "form": []
     },
     "tests": [
