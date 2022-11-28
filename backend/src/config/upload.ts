@@ -13,7 +13,7 @@ interface IUploadConfig {
   multer: { storage: StorageEngine };
 
   config: {
-    disk: {};
+    disk: Record<string, unknown>;
     aws: {
       bucket: string;
     };

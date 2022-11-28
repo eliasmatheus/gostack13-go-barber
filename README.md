@@ -99,6 +99,14 @@
 
 ```
 
+#### Redis
+
+```bash
+  # Criar o container:
+  $ docker run --name redis -p 6379:6379 -d -t redis:alpine
+
+```
+
 ### Iniciar a imagem do PostgreSQL no Docker
 
 ```bash
